@@ -1,6 +1,8 @@
 {
-  "name": "js",
-  "version": "0.0.0",
+  "name": "ff_vendors",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@optimizely/optimizely-sdk": "^4.6.2"
+  }
 }
