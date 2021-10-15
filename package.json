@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@optimizely/optimizely-sdk": "^4.6.2"
+    "@optimizely/optimizely-sdk": "^4.6.2",
+    "vwo-node-sdk": "^1.22.0"
   }
 }

@@ -1,4 +1,4 @@
-export function execute() {
+export function executeOptimizely() {
   const optimizelySdk = require('@optimizely/optimizely-sdk');
   const optimizelyClient = optimizelySdk.createInstance({
     sdkKey: 'GD1YnswD17rAwke3qSy5q',
