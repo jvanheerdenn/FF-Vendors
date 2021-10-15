@@ -1,17 +1,28 @@
 import { executeOptimizely } from './optimizely.js';
 import { executeVWO } from './VWO.js';
 import { executeTarget } from './adobeTarget.js';
+import { executeFlagship } from './flagship.js';
 
 document.getElementById('optimizely').addEventListener('click', () => {
-  console.log(executeOptimizely());
+  executeOptimizely();
 });
 
 document.getElementById('vwo').addEventListener('click', () => {
   console.clear();
-  console.log(executeVWO());
+  executeVWO();
 });
 
 document.getElementById('target').addEventListener('click', () => {
   console.clear();
-  console.log(executeTarget());
+  executeTarget();
+});
+
+document.getElementById('flagship').addEventListener('click', () => {
+  console.clear();
+  executeFlagship();
+});
+
+document.getElementById('google').addEventListener('click', () => {
+  console.clear();
+  executeTarget();
 });
