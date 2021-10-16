@@ -6,29 +6,30 @@ export function executeFlagship() {
   const visitorID = Math.floor(
     Math.random() * (10000 - 1000) + 1000
   ).toString();
+  const modifications = [
+    {
+      key: 'faqs',
+      defaultValue: true,
+    },
+    {
+      key: 'account_overview',
+      defaultValue: true,
+    },
+  ];
 
   const fsInstance = flagship.start(enviromentID, apiKEY);
   const fsVisitorInstance = fsInstance.newVisitor(visitorID);
 
   fsVisitorInstance.on('ready', ({ withError, error }) => {
-    if (withError) {
-      console.error('Ouch, visitor is ready but with error : ' + error.stack);
-    } else {
-      console.log('visitor is ready without error ! ✨');
-    }
+    const mod = fsVisitorInstance.getModifications(modifications);
+    console.log('getModifications():', mod);
 
-    const { btnColor, btnText } = fsVisitorInstance.getModifications([
-      {
-        key: 'btnColor',
-        defaultValue: '#ff0000',
-      },
-      {
-        key: 'btnText',
-        defaultValue: 'Wahoo !',
-      },
-    ]);
+    fsVisitorInstance.getAllModifications().then((mod) => {
+      console.log('getAllModifications():', mod.data);
+    });
 
-    console.log(btnColor); // output: "#fff"
-    console.log(btnText); // output: "Awesome !"
+    fsVisitorInstance.getModificationsForCampaign('FFtest').then((response) => {
+      console.log('getModificationsForCampaign(): ', response.data);
+    });
   });
 }
