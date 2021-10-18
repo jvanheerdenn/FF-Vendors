@@ -9,11 +9,11 @@ export function executeFlagship() {
   const modifications = [
     {
       key: 'faqs',
-      defaultValue: true,
+      //defaultValue: true,
     },
     {
       key: 'account_overview',
-      defaultValue: true,
+      //defaultValue: true,
     },
   ];
 
@@ -21,6 +21,8 @@ export function executeFlagship() {
   const fsVisitorInstance = fsInstance.newVisitor(visitorID);
 
   fsVisitorInstance.on('ready', ({ withError, error }) => {
+    fsVisitorInstance.activateModifications(modifications);
+
     const mod = fsVisitorInstance.getModifications(modifications);
     console.log('getModifications():', mod);
 
@@ -28,8 +30,10 @@ export function executeFlagship() {
       console.log('getAllModifications():', mod.data);
     });
 
-    fsVisitorInstance.getModificationsForCampaign('FFtest').then((response) => {
-      console.log('getModificationsForCampaign(): ', response.data);
-    });
+    fsVisitorInstance
+      .getModificationInfo('account_overview')
+      .then((response) => {
+        console.log('getModificationInfo(): ', response);
+      });
   });
 }
