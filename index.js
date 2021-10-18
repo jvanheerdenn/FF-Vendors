@@ -6,7 +6,7 @@ import { executeLaunch } from './Files/launchdarkly.js';
 
 document.getElementById('optimizely').addEventListener('click', () => {
   executeOptimizely();
-});
+}); 
 
 document.getElementById('vwo').addEventListener('click', () => {
   console.clear();

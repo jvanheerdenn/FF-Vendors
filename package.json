@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@adobe/alloy": "^2.6.4",
+    "@flagship.io/js-sdk": "^2.2.5",
     "@optimizely/optimizely-sdk": "^4.6.2",
+    "launchdarkly-js-client-sdk": "2",
     "vwo-node-sdk": "^1.22.0"
   }
 }
