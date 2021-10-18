@@ -15,6 +15,14 @@ export function executeFlagship() {
       key: 'account_overview',
       //defaultValue: true,
     },
+    {
+      key: 'aB_test1',
+      //defaultValue: true,
+    },
+    {
+      key: 'aB_test2',
+      //defaultValue: true,
+    },
   ];
 
   const fsInstance = flagship.start(enviromentID, apiKEY);
