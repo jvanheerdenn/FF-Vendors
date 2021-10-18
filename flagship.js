@@ -39,6 +39,20 @@ export function executeFlagship() {
     });
 
     fsVisitorInstance
+      .sendHit({
+        type: 'Event',
+        data: {
+          category: 'Action Tracking',
+          action: 'EventTest1',
+        },
+      })
+      .then(() => console.log('Event  hit send !'));
+
+    fsVisitorInstance.getModificationsForCampaign('ABtest').then((response) => {
+      console.log('getModificationsForCampaign():', response);
+    });
+
+    fsVisitorInstance
       .getModificationInfo('account_overview')
       .then((response) => {
         console.log('getModificationInfo(): ', response);
