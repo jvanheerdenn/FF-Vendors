@@ -1,7 +1,8 @@
-import { executeOptimizely } from './optimizely.js';
-import { executeVWO } from './VWO.js';
-import { executeTarget } from './adobeTarget.js';
-import { executeFlagship } from './flagship.js';
+import { executeOptimizely } from './Files/optimizely.js';
+import { executeVWO } from './Files/VWO.js';
+import { executeTarget } from './Files/adobeTarget.js';
+import { executeFlagship } from './Files/flagship.js';
+import { executeGoogle } from './Files/googleOptimize.js';
 
 document.getElementById('optimizely').addEventListener('click', () => {
   executeOptimizely();
@@ -24,5 +25,5 @@ document.getElementById('flagship').addEventListener('click', () => {
 
 document.getElementById('google').addEventListener('click', () => {
   console.clear();
-  executeTarget();
+  executeGoogle();
 });
