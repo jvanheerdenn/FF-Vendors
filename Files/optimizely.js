@@ -4,7 +4,7 @@ export function executeOptimizely() {
     sdkKey: 'GD1YnswD17rAwke3qSy5q',
   });
   const featureKey = 'virtual_assistant_routes';
-  const userId = Math.floor(Math.random() * (10000 - 1000) + 1000).toString(); 
+  const userId = Math.floor(Math.random() * (10000 - 1000) + 1000).toString();
 
   optimizelyClient.onReady().then(() => {
     const isFeatureEnabled = optimizelyClient.isFeatureEnabled(
@@ -22,6 +22,7 @@ export function executeOptimizely() {
       userId
     );
     const getVariation = optimizelyClient.getVariation('experiment', userId);
+    const activate = optimizelyClient.activate('experiment', userId);
 
     // v4.0
     const userContext = optimizelyClient.createUserContext(userId);
@@ -40,5 +41,6 @@ export function executeOptimizely() {
     console.log('decide(): ', decide);
     console.log('decideAll(): ', decideAll);
     console.log('decideForKeys(): ', decideForKeys);
+    console.log('activate(): ', activate);
   });
 }
